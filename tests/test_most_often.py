@@ -16,3 +16,13 @@ def test_add_new_array_in_list():
     og_list = MostOften([1, 2, 3, 4])
     og_list.add_new([5, 6])
     assert og_list.starting_list == [1, 2, 3, 4, [5, 6]]
+    
+def test_if_highest_count_is_one():
+    obj_most_often = MostOften([1,1,1,2,3])
+    result = obj_most_often.get_most_often()
+    assert result == 1
+    
+def test_given_two_element_with_same_highest_count():
+    obj_most_often = MostOften([1,1,1,2,2,2,3])
+    result = obj_most_often.get_most_often()
+    assert result == "no clear winner"
