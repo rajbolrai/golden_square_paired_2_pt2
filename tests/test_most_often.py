@@ -26,3 +26,20 @@ def test_given_two_element_with_same_highest_count():
     obj_most_often = MostOften([1,1,1,2,2,2,3])
     result = obj_most_often.get_most_often()
     assert result == "no clear winner"
+
+def test_given_empty_list():
+    obj_most_often = MostOften([])
+    result = obj_most_often.get_most_often()
+    assert result == "no clear winner"
+
+def test_mixed_list():
+    obj_most_often = MostOften([1, 2, "cat", "dog", 3, 7, "dog"])
+    result = obj_most_often.get_most_often()
+    assert result == "dog"
+
+def test_add_new_and_get_most_often():
+    obj_most_often = MostOften([1, 2, 3])
+    obj_most_often.add_new("hello world")
+    obj_most_often.add_new(2)
+    result = obj_most_often.get_most_often()
+    assert result == 2

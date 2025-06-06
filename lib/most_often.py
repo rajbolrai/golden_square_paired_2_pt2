@@ -6,6 +6,7 @@ class MostOften:
         if type(self.starting_list) != list:
             raise TypeError("Error: invalid type")
             #self.starting_list = []
+        
 
     def add_new(self, new_item):
         self.starting_list.append(new_item)
